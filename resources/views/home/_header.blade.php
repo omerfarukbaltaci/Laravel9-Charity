@@ -1,3 +1,4 @@
+<body>
 <!-- Top Bar Start -->
 <div class="top-bar d-none d-md-block">
     <div class="container-fluid">
