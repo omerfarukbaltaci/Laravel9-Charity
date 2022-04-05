@@ -34,7 +34,8 @@
     @include("home._sidebar")
 @show
 
-@include('home._slider')
+@section('slider')
+@show
 
 
 @yield('content')

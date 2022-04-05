@@ -2,6 +2,9 @@
 
 @section('title','Charity Project')
 
+@section('slider')
+    @include('home._slider')
+@endsection
 
 @section('content')
     <!-- Carousel End -->
