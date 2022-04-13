@@ -5,9 +5,24 @@ namespace App\Http\Controllers\AdminPanel;
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
+    protected $appends = [
+        'getParentsTree'
+    ];
+
+    public static function getParentsTree($menu,$title) {
+        if($menu->parent_id == 0) {
+            return $title;
+        }
+
+        $parent = Menu::find($menu->parent_id);
+        $title = $parent->title . ' > ' . $title;
+        return MenuController::getParentsTree($parent,$title);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +45,10 @@ class MenuController extends Controller
     public function create()
     {
         //
-        return view('admin.menu.create');
+        $data = Menu::all();
+        return view('admin.menu.create',[
+            'data' => $data
+        ]);
     }
 
     /**
@@ -43,11 +61,14 @@ class MenuController extends Controller
     {
         //
         $data = new Menu();
-        $data->parent_id = 0;
+        $data->parent_id = $request->parent_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
         $data->status = $request->status;
+        if ($request->file('image')) {
+            $data->image = $request->file('image')->store('images');
+        }
         $data->save();
         return redirect('admin/menu');
     }
@@ -77,8 +98,10 @@ class MenuController extends Controller
     {
         //
         $data = Menu::find($id);
+        $datalist = Menu::all();
         return view('admin.menu.edit',[
-            'data' => $data
+            'data' => $data,
+            'datalist' => $datalist
         ]);
     }
 
@@ -93,11 +116,14 @@ class MenuController extends Controller
     {
         //
         $data = Menu::find($id);
-        $data->parent_id = 0;
+        $data->parent_id = $request->parent_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
         $data->status = $request->status;
+        if ($request->file('image')) {
+            $data->image = $request->file('image')->store('images');
+        }
         $data->save();
         return redirect('admin/menu');
     }
@@ -108,8 +134,12 @@ class MenuController extends Controller
      * @param  \App\Models\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Menu $menu)
+    public function destroy(Menu $menu,$id)
     {
         //
+        $data = Menu::find($id);
+        Storage::delete($data->image);
+        $data->delete();
+        return redirect('admin/menu');
     }
 }

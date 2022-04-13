@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title','Show Menu')
+@section('title','Show Menu: '.$data->title)
 
 
 @section('content')
@@ -9,13 +9,6 @@
     <!-- ============================================================== -->
     <div class="dashboard-wrapper">
         <div class="container-fluid dashboard-content">
-            <!-- ============================================================== -->
-            <!-- pageheader -->
-            <!-- ============================================================== -->
-
-            <!-- ============================================================== -->
-            <!-- end pageheader -->
-            <!-- ============================================================== -->
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="page-header">

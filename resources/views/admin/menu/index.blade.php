@@ -31,9 +31,8 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">ID</th>
+                                    <th scope="col">Parent</th>
                                     <th scope="col">Title</th>
-                                    <th scope="col">Keywords</th>
-                                    <th scope="col">Description</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Edit</th>
@@ -45,10 +44,13 @@
                                 @foreach($data as $rs)
                                     <tr role="row" class="odd">
                                         <th>{{$rs->id}}</th>
+                                        <th>{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs,$rs->title)}}</th>
                                         <td>{{$rs->title}}</td>
-                                        <td>{{$rs->keywords}}</td>
-                                        <td>{{$rs->description}}</td>
-                                        <th>{{$rs->image}}</th>
+                                        <td>
+                                            @if ($rs->image)
+                                                <img src="{{Storage::url($rs->image)}}" style="height: 40px ">
+                                            @endif
+                                        </td>
                                         <td>{{$rs->status}}</td>
                                         <td><a href="{{route('admin.menu.edit',['id'=>$rs->id])}}"
                                                class="btn btn-success btn-sm">Edit</a>

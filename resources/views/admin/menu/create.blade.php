@@ -19,7 +19,7 @@
                         <div class="page-breadcrumb">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{route('admin')}}" class="breadcrumb-link">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="{{route('admin.index')}}" class="breadcrumb-link">Dashboard</a></li>
                                     <li class="breadcrumb-item"><a href="{{route('admin.menu.index')}}" class="breadcrumb-link">Menu</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Add Menu</li>
                                 </ol>
@@ -33,10 +33,19 @@
             <!-- ============================================================== -->
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <h5 class="card-header">Add Menu</h5>
                     <div class="card-body">
-                        <form role="form" action="{{route('admin.menu.create')}}" method="post">
+                        <form role="form" action="{{route('admin.menu.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
+                            <div class="form-group">
+                                <label>Parent Menu</label>
+
+                                <select class="form-control select2" name="parent_id" style="">
+                                    <option value="0" selected="selected">Main Menu</option>
+                                    @foreach($data as $rs)
+                                        <option value="{{$rs->id}}">{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs,$rs->title)}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <label for="inputUserName">Title</label>
                                 <input type="text" name="title" data-parsley-trigger="change"
@@ -54,7 +63,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Image</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <input class="form-control" type="file" name="image">
                             </div>
                             <div class="form-group">
                                 <label>Status</label>
