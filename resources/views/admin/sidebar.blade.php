@@ -21,6 +21,9 @@
                         <a class="nav-link" href="/admin/menu" aria-expanded="false"><i class="fas fa-list-ul"></i>Menus</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/admin/content" aria-expanded="false"><i class="far fa-edit"></i></i>Contents</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/admin/comment" aria-expanded="false"><i class=" far fa-comments"></i>Comments</a>
                     </li>
                     <li class="nav-item">
