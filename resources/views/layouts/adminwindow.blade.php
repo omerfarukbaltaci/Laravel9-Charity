@@ -10,20 +10,15 @@
     <link rel="stylesheet" href="{{asset('assets')}}/admin/assets/vendor/fonts/circular-std/style.css">
     <link rel="stylesheet" href="{{asset('assets')}}/admin/assets/libs/css/style.css">
     <link rel="stylesheet" href="{{asset('assets')}}/admin/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
-    @yield("head")
 </head>
 <body>
 
-@include('admin.header')
 
-@section('sidebar')
-    @include("admin.sidebar")
-@show
 
 @yield('content')
 
 
-@include("admin.footer")
+
 @yield('foot')
 
 </body>

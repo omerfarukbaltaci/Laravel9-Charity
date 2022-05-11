@@ -36,6 +36,7 @@
                                     <th scope="col">Donate</th>
                                     <th scope="col">Quantity</th>
                                     <th scope="col">Image</th>
+                                    <th scope="col">Image Gallery</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Edit</th>
                                     <th scope="col">Delete</th>
@@ -50,11 +51,17 @@
                                         <td>{{$rs->title}}</td>
                                         <td>{{$rs->donate}}</td>
                                         <td>{{$rs->quantity}}</td>
-
                                         <td>
                                             @if ($rs->image)
                                                 <img src="{{Storage::url($rs->image)}}" style="height: 40px ">
                                             @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{route('admin.image.index',['cid'=>$rs->id])}}"
+                                               onclick="return !window.open(this.href, '','top=50 left=100 width=700,height=620')">
+                                                <img src="{{asset('assets')}}/admin/assets/images/gallery.png"
+                                                     style="height: 40px;">
+                                            </a>
                                         </td>
                                         <td>{{$rs->status}}</td>
                                         <td><a href="{{route('admin.content.edit',['id'=>$rs->id])}}"
@@ -62,7 +69,8 @@
                                         </td>
                                         <td><a href="{{route('admin.content.destroy',['id'=>$rs->id])}}"
                                                class="btn btn-danger btn-sm"
-                                               onclick="return confirm('Deleting! Are you sure?')">Delete</a></td>
+                                               onclick="return confirm('Deleting {{$rs->title}}!! Are you sure?')">Delete</a>
+                                        </td>
                                         <td><a href="{{route('admin.content.show',['id'=>$rs->id])}}"
                                                class="btn btn-primary btn-sm">Show</a>
                                         </td>
@@ -72,7 +80,6 @@
                             </table>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

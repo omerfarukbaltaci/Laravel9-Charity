@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title','Content List')
+@section('title','Menu List')
 
 
 @section('content')
@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="page-header">
-                        <a href="{{route('admin.content.create')}}" class="btn btn-success btn-lg">Add Content</a>
+                        <a href="{{route('admin.menu.create')}}" class="btn btn-success btn-lg">Add Menu</a>
                     </div>
                 </div>
             </div>
@@ -26,15 +26,13 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-header">Content List</h5>
+                            <h5 class="card-header">Menu List</h5>
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
                                     <th scope="col">ID</th>
-                                    <th scope="col">Menu</th>
+                                    <th scope="col">Parent</th>
                                     <th scope="col">Title</th>
-                                    <th scope="col">Donate</th>
-                                    <th scope="col">Quantity</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Edit</th>
@@ -48,8 +46,6 @@
                                         <th>{{$rs->id}}</th>
                                         <th>{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs,$rs->title)}}</th>
                                         <td>{{$rs->title}}</td>
-                                        <td>{{$rs->donate}}</td>
-                                        <td>{{$rs->quantity}}</td>
 
                                         <td>
                                             @if ($rs->image)
@@ -57,13 +53,13 @@
                                             @endif
                                         </td>
                                         <td>{{$rs->status}}</td>
-                                        <td><a href="{{route('admin.content.edit',['id'=>$rs->id])}}"
+                                        <td><a href="{{route('admin.menu.edit',['id'=>$rs->id])}}"
                                                class="btn btn-success btn-sm">Edit</a>
                                         </td>
-                                        <td><a href="{{route('admin.content.destroy',['id'=>$rs->id])}}"
+                                        <td><a href="{{route('admin.menu.destroy',['id'=>$rs->id])}}"
                                                class="btn btn-danger btn-sm"
                                                onclick="return confirm('Deleting! Are you sure?')">Delete</a></td>
-                                        <td><a href="{{route('admin.content.show',['id'=>$rs->id])}}"
+                                        <td><a href="{{route('admin.menu.show',['id'=>$rs->id])}}"
                                                class="btn btn-primary btn-sm">Show</a>
                                         </td>
                                     </tr>

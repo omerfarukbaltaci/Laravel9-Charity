@@ -21,13 +21,12 @@ return new class extends Migration
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
             $table->string('image')->nullable();
-            $table->string('detail')->nullable();
+            $table->text('detail')->nullable();
             $table->string('type')->nullable();
             $table->string('testimonial')->nullable();
             $table->string('event')->nullable();
             $table->float('donate')->nullable();
             $table->float('quantity')->nullable();
-
             $table->string('status',6)->default('False');
             $table->timestamps();
         });

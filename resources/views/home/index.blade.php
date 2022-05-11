@@ -10,7 +10,8 @@
     <!-- Carousel End -->
 
     <!-- Video Modal Start-->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -19,7 +20,8 @@
                     </button>
                     <!-- 16:9 aspect ratio -->
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                                allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>
@@ -33,7 +35,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="about-img" data-parallax="scroll" data-image-src="{{asset('assets')}}/img/about.jpg" ></div>
+                    <div class="about-img" data-parallax="scroll"
+                         data-image-src="{{asset('assets')}}/img/about.jpg"></div>
                 </div>
                 <div class="col-lg-6">
                     <div class="section-header">
@@ -55,13 +58,26 @@
 
                         <div class="tab-content">
                             <div id="tab-content-1" class="container tab-pane active">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae pellentesque turpis. Donec in hendrerit dui, vel blandit massa. Ut vestibulum suscipit cursus. Cras quis porta nulla, ut placerat risus. Aliquam nec magna eget velit luctus dictum. Phasellus et felis sed purus tristique dignissim. Morbi sit amet leo at purus accumsan pellentesque. Vivamus fermentum nisi vel dapibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae pellentesque turpis.
+                                Donec in hendrerit dui, vel blandit massa. Ut vestibulum suscipit cursus. Cras quis
+                                porta nulla, ut placerat risus. Aliquam nec magna eget velit luctus dictum. Phasellus et
+                                felis sed purus tristique dignissim. Morbi sit amet leo at purus accumsan pellentesque.
+                                Vivamus fermentum nisi vel dapibus blandit. Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.
                             </div>
                             <div id="tab-content-2" class="container tab-pane fade">
-                                Sed tincidunt, magna ut vehicula volutpat, turpis diam condimentum justo, posuere congue turpis massa in mi. Proin ornare at massa at fermentum. Nunc aliquet sed nisi iaculis ornare. Nam semper tortor eget est egestas, eu sagittis nunc sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent bibendum sapien sed purus molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Sed tincidunt, magna ut vehicula volutpat, turpis diam condimentum justo, posuere congue
+                                turpis massa in mi. Proin ornare at massa at fermentum. Nunc aliquet sed nisi iaculis
+                                ornare. Nam semper tortor eget est egestas, eu sagittis nunc sodales. Interdum et
+                                malesuada fames ac ante ipsum primis in faucibus. Praesent bibendum sapien sed purus
+                                molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             </div>
                             <div id="tab-content-3" class="container tab-pane fade">
-                                Aliquam dolor odio, mollis sed feugiat sit amet, feugiat ut sapien. Nunc eu dignissim lorem. Suspendisse at hendrerit enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed condimentum semper turpis vel facilisis. Nunc vel faucibus orci. Mauris ut mauris rhoncus, efficitur nisi at, venenatis quam. Praesent egestas pretium enim sit amet finibus. Curabitur at erat molestie, tincidunt lorem eget, consequat ligula.
+                                Aliquam dolor odio, mollis sed feugiat sit amet, feugiat ut sapien. Nunc eu dignissim
+                                lorem. Suspendisse at hendrerit enim. Interdum et malesuada fames ac ante ipsum primis
+                                in faucibus. Sed condimentum semper turpis vel facilisis. Nunc vel faucibus orci. Mauris
+                                ut mauris rhoncus, efficitur nisi at, venenatis quam. Praesent egestas pretium enim sit
+                                amet finibus. Curabitur at erat molestie, tincidunt lorem eget, consequat ligula.
                             </div>
                         </div>
                     </div>
@@ -206,102 +222,33 @@
                 <h2>Let's know about charity causes around the world</h2>
             </div>
             <div class="owl-carousel causes-carousel">
-                <div class="causes-item">
-                    <div class="causes-img">
-                        <img src="{{asset('assets')}}/img/causes-1.jpg" alt="Image">
-                    </div>
-                    <div class="causes-progress">
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                <span>85%</span>
+                @foreach($contentlist1 as $rs)
+                    <div class="causes-item">
+                        <div class="causes-img">
+                            <img src="{{Storage::url($rs->image)}}" style="width: 500px; height: 300px">
+                        </div>
+                        <div class="causes-progress">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
+                                     aria-valuemax="100">
+                                    <span>85%</span>
+                                </div>
+                            </div>
+                            <div class="progress-text">
+                                <p><strong>Raised:</strong> $100000</p>
+                                <p><strong>Goal:</strong> $50000</p>
                             </div>
                         </div>
-                        <div class="progress-text">
-                            <p><strong>Raised:</strong> $100000</p>
-                            <p><strong>Goal:</strong> $50000</p>
+                        <div class="causes-text">
+                            <h3>{{$rs->title}}</h3>
+                            <p>{{$rs->description}}</p>
+                        </div>
+                        <div class="causes-btn">
+                            <a class="btn btn-custom">Learn More</a>
+                            <a class="btn btn-custom">Donate Now</a>
                         </div>
                     </div>
-                    <div class="causes-text">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet elit. Phasell nec pretium mi. Curabit facilis ornare velit non vulputa</p>
-                    </div>
-                    <div class="causes-btn">
-                        <a class="btn btn-custom">Learn More</a>
-                        <a class="btn btn-custom">Donate Now</a>
-                    </div>
-                </div>
-                <div class="causes-item">
-                    <div class="causes-img">
-                        <img src="{{asset('assets')}}/img/causes-2.jpg" alt="Image">
-                    </div>
-                    <div class="causes-progress">
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                <span>85%</span>
-                            </div>
-                        </div>
-                        <div class="progress-text">
-                            <p><strong>Raised:</strong> $100000</p>
-                            <p><strong>Goal:</strong> $50000</p>
-                        </div>
-                    </div>
-                    <div class="causes-text">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet elit. Phasell nec pretium mi. Curabit facilis ornare velit non vulputa</p>
-                    </div>
-                    <div class="causes-btn">
-                        <a class="btn btn-custom">Learn More</a>
-                        <a class="btn btn-custom">Donate Now</a>
-                    </div>
-                </div>
-                <div class="causes-item">
-                    <div class="causes-img">
-                        <img src="{{asset('assets')}}/img/causes-3.jpg" alt="Image">
-                    </div>
-                    <div class="causes-progress">
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                <span>85%</span>
-                            </div>
-                        </div>
-                        <div class="progress-text">
-                            <p><strong>Raised:</strong> $100000</p>
-                            <p><strong>Goal:</strong> $50000</p>
-                        </div>
-                    </div>
-                    <div class="causes-text">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet elit. Phasell nec pretium mi. Curabit facilis ornare velit non vulputa</p>
-                    </div>
-                    <div class="causes-btn">
-                        <a class="btn btn-custom">Learn More</a>
-                        <a class="btn btn-custom">Donate Now</a>
-                    </div>
-                </div>
-                <div class="causes-item">
-                    <div class="causes-img">
-                        <img src="{{asset('assets')}}/img/causes-4.jpg" alt="Image">
-                    </div>
-                    <div class="causes-progress">
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                <span>85%</span>
-                            </div>
-                        </div>
-                        <div class="progress-text">
-                            <p><strong>Raised:</strong> $100000</p>
-                            <p><strong>Goal:</strong> $50000</p>
-                        </div>
-                    </div>
-                    <div class="causes-text">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet elit. Phasell nec pretium mi. Curabit facilis ornare velit non vulputa</p>
-                    </div>
-                    <div class="causes-btn">
-                        <a class="btn btn-custom">Learn More</a>
-                        <a class="btn btn-custom">Donate Now</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -320,7 +267,9 @@
                         </div>
                         <div class="donate-text">
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non. Aliquam metus tortor, auctor id gravida, viverra quis sem. Curabitur non nisl nec nisi maximus. Aenean convallis porttitor. Aliquam interdum at lacus non blandit.
+                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
+                                velit non. Aliquam metus tortor, auctor id gravida, viverra quis sem. Curabitur non nisl
+                                nec nisi maximus. Aenean convallis porttitor. Aliquam interdum at lacus non blandit.
                             </p>
                         </div>
                     </div>
@@ -329,10 +278,10 @@
                     <div class="donate-form">
                         <form>
                             <div class="control-group">
-                                <input type="text" class="form-control" placeholder="Name" required="required" />
+                                <input type="text" class="form-control" placeholder="Name" required="required"/>
                             </div>
                             <div class="control-group">
-                                <input type="email" class="form-control" placeholder="Email" required="required" />
+                                <input type="email" class="form-control" placeholder="Email" required="required"/>
                             </div>
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                 <label class="btn btn-custom active">
@@ -377,7 +326,8 @@
                             <div class="event-text">
                                 <h3>Lorem ipsum dolor sit</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
+                                    Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non
+                                    vulpte liqum metus tortor
                                 </p>
                                 <a class="btn btn-custom" href="">Join Now</a>
                             </div>
@@ -396,7 +346,8 @@
                             <div class="event-text">
                                 <h3>Lorem ipsum dolor sit</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
+                                    Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non
+                                    vulpte liqum metus tortor
                                 </p>
                                 <a class="btn btn-custom" href="">Join Now</a>
                             </div>
@@ -499,13 +450,14 @@
                     <div class="volunteer-form">
                         <form>
                             <div class="control-group">
-                                <input type="text" class="form-control" placeholder="Name" required="required" />
+                                <input type="text" class="form-control" placeholder="Name" required="required"/>
                             </div>
                             <div class="control-group">
-                                <input type="email" class="form-control" placeholder="Email" required="required" />
+                                <input type="email" class="form-control" placeholder="Email" required="required"/>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control" placeholder="Why you want to become a volunteer?" required="required"></textarea>
+                                <textarea class="form-control" placeholder="Why you want to become a volunteer?"
+                                          required="required"></textarea>
                             </div>
                             <div>
                                 <button class="btn btn-custom" type="submit">Become a volunteer</button>
@@ -521,7 +473,9 @@
                         </div>
                         <div class="volunteer-text">
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non. Aliquam metus tortor, auctor id gravida, viverra quis sem. Curabitur non nisl nec nisi maximus. Aenean convallis porttitor. Aliquam interdum at lacus non blandit.
+                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
+                                velit non. Aliquam metus tortor, auctor id gravida, viverra quis sem. Curabitur non nisl
+                                nec nisi maximus. Aenean convallis porttitor. Aliquam interdum at lacus non blandit.
                             </p>
                         </div>
                     </div>
@@ -550,7 +504,8 @@
                     </div>
                     <div class="testimonial-text">
                         <p>
-                            Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor, auctor id gravid vivera quis
+                            Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu
+                            metus tortor, auctor id gravid vivera quis
                         </p>
                     </div>
                 </div>
@@ -564,7 +519,8 @@
                     </div>
                     <div class="testimonial-text">
                         <p>
-                            Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor, auctor id gravid vivera quis
+                            Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu
+                            metus tortor, auctor id gravid vivera quis
                         </p>
                     </div>
                 </div>
@@ -578,7 +534,8 @@
                     </div>
                     <div class="testimonial-text">
                         <p>
-                            Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor, auctor id gravid vivera quis
+                            Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu
+                            metus tortor, auctor id gravid vivera quis
                         </p>
                     </div>
                 </div>
@@ -592,7 +549,8 @@
                     </div>
                     <div class="testimonial-text">
                         <p>
-                            Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor, auctor id gravid vivera quis
+                            Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu
+                            metus tortor, auctor id gravid vivera quis
                         </p>
                     </div>
                 </div>
@@ -616,19 +574,23 @@
                 <div id="success"></div>
                 <form name="sentMessage" id="contactForm" novalidate="novalidate">
                     <div class="control-group">
-                        <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" required="required"
+                               data-validation-required-message="Please enter your name"/>
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" required="required"
+                               data-validation-required-message="Please enter your email"/>
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                        <input type="text" class="form-control" id="subject" placeholder="Subject" required="required"
+                               data-validation-required-message="Please enter a subject"/>
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                        <textarea class="form-control" id="message" placeholder="Message" required="required"
+                                  data-validation-required-message="Please enter your message"></textarea>
                         <p class="help-block text-danger"></p>
                     </div>
                     <div>
@@ -657,7 +619,8 @@
                         <div class="blog-text">
                             <h3><a href="#">Lorem ipsum dolor sit</a></h3>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
+                                Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte
+                                liqum metus tortor
                             </p>
                         </div>
                         <div class="blog-meta">
@@ -674,7 +637,8 @@
                         <div class="blog-text">
                             <h3><a href="#">Lorem ipsum dolor sit</a></h3>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
+                                Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte
+                                liqum metus tortor
                             </p>
                         </div>
                         <div class="blog-meta">
@@ -691,7 +655,8 @@
                         <div class="blog-text">
                             <h3><a href="#">Lorem ipsum dolor sit</a></h3>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
+                                Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte
+                                liqum metus tortor
                             </p>
                         </div>
                         <div class="blog-meta">

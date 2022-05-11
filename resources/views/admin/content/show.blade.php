@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title','Show Menu: '.$data->title)
+@section('title','Show Content: '.$data->title)
 
 
 @section('content')
@@ -35,6 +35,13 @@
                                     <th scope="col">{{$data->id}}</th>
                                 </tr>
                                 <tr>
+                                    <th scope="col">Menu</th>
+                                    <th scope="col">
+                                        {{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($data->menu,$data->menu->title)}}
+
+                                    </th>
+                                </tr>
+                                <tr>
                                     <th scope="col">Title</th>
                                     <th scope="col">{{$data->title}}</th>
                                 </tr>
@@ -47,8 +54,16 @@
                                     <th scope="col">{{$data->description}}</th>
                                 </tr>
                                 <tr>
+                                    <th>Detail</th>
+                                    <td>{!!$data->detail!!}</td>
+                                </tr>
+                                <tr>
                                     <th scope="col">Image</th>
-                                    <th scope="col"></th>
+                                    <td>
+                                        @if ($data->image)
+                                            <img src="{{Storage::url($data->image)}}" style="height: 100px ">
+                                        @endif
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th scope="col">Status</th>
@@ -68,9 +83,9 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
-                                <a href="{{route('admin.menu.edit',['id'=>$data->id])}}" class="btn btn-success btn-lg"
+                                <a href="{{route('admin.content.edit',['id'=>$data->id])}}" class="btn btn-success btn-lg"
                                    style="width: 100px">Edit</a>
-                                <a href="{{route('admin.menu.destroy',['id'=>$data->id])}}"
+                                <a href="{{route('admin.content.destroy',['id'=>$data->id])}}"
                                    onclick="return confirm('Deleting! Are you sure?')"
                                    class="btn btn-danger btn-lg" style="width: 100px">Delete</a>
                             </div>
