@@ -71,23 +71,23 @@
                                        class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="inputPassword">Testimonial</label>
-                                <input name="testimonial" type="text" placeholder="Testimonial"
+                                <label for="inputPassword">Date</label>
+                                <input name="date" type="date" placeholder="Date"
                                        class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="inputPassword">Event</label>
-                                <input name="event" type="text" placeholder="Event"
+                                <label for="inputPassword">Location</label>
+                                <input name="location" type="text" placeholder="Location"
                                        class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="inputPassword">Donate</label>
-                                <input name="donate" type="text" placeholder="Donate"
+                                <label for="inputPassword">Hour</label>
+                                <input name="hour" type="time" placeholder="Hour"
                                        class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="inputPassword">Quantity</label>
-                                <input name="quantity" type="number" value="0"
+                                <label for="inputPassword">Donate Quantity</label>
+                                <input name="donateQuantity" type="number" value="0"
                                        class="form-control">
                             </div>
                             <div class="mb-3">

@@ -31,6 +31,10 @@ Route::get('/', function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/test', [HomeController::class, 'test'])->name('test');
 
+Route::get('/content/{id}',[HomeController::class,'content'])->name('content');
+Route::get('/menucontents/{id}/{slug}',[HomeController::class,'menucontents'])->name('menucontents');
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

@@ -33,8 +33,10 @@
                                     <th scope="col">ID</th>
                                     <th scope="col">Menu</th>
                                     <th scope="col">Title</th>
-                                    <th scope="col">Donate</th>
-                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Location</th>
+                                    <th scope="col">Hour</th>
+                                    <th scope="col">Donate Quantity</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Image Gallery</th>
                                     <th scope="col">Status</th>
@@ -49,8 +51,10 @@
                                         <th>{{$rs->id}}</th>
                                         <th>{{\App\Http\Controllers\AdminPanel\MenuController::getParentsTree($rs,$rs->title)}}</th>
                                         <td>{{$rs->title}}</td>
-                                        <td>{{$rs->donate}}</td>
-                                        <td>{{$rs->quantity}}</td>
+                                        <td>{{$rs->date}}</td>
+                                        <td>{{$rs->location}}</td>
+                                        <td>{{$rs->hour}}</td>
+                                        <td>{{$rs->donateQuantity}}</td>
                                         <td>
                                             @if ($rs->image)
                                                 <img src="{{Storage::url($rs->image)}}" style="height: 40px ">

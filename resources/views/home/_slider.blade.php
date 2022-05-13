@@ -15,9 +15,8 @@
                         </p>
                         <div class="carousel-btn">
                             <a class="btn btn-custom" href="">Donate Now</a>
-                            <a class="btn btn-custom btn-play" data-toggle="modal"
-                               data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">Watch
-                                Video</a>
+                            <a class="btn btn-custom btn-play" href="{{route('content',['id'=>$rs->id])}}">Learn More</a>
+
                         </div>
                     </div>
                 </div>

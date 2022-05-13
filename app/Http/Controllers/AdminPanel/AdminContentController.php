@@ -55,10 +55,10 @@ class AdminContentController extends Controller
         $data->description = $request->description;
         $data->detail = $request->detail;
         $data->type = $request->type;
-        $data->testimonial = $request->testimonial;
-        $data->event = $request->event;
-        $data->donate = $request->donate;
-        $data->quantity = $request->quantity;
+        $data->date = $request->date;
+        $data->hour = $request->hour;
+        $data->location = $request->location;
+        $data->donateQuantity = $request->donateQuantity;
 
         $data->status = $request->status;
         if ($request->file('image')) {
@@ -118,10 +118,10 @@ class AdminContentController extends Controller
         $data->description = $request->description;
         $data->detail = $request->detail;
         $data->type = $request->type;
-        $data->testimonial = $request->testimonial;
-        $data->event = $request->event;
-        $data->donate = $request->donate;
-        $data->quantity = $request->quantity;
+        $data->date = $request->date;
+        $data->hour = $request->hour;
+        $data->location = $request->location;
+        $data->donateQuantity = $request->donateQuantity;
 
         $data->status = $request->status;
         if ($request->file('image')) {

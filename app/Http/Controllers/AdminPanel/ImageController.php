@@ -5,7 +5,6 @@ namespace App\Http\Controllers\AdminPanel;
 use App\Http\Controllers\Controller;
 use App\Models\Content;
 use App\Models\Image;
-use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -86,16 +85,16 @@ class ImageController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id,$cid)
     {
         $data = Image::find($id);
-        if($data->image && Storage::disk('public')->exists($data->image)) {
+        if ($data->image && Storage::disk('public')->exists($data->image)) {
             Storage::delete($data->image);
         }
         $data->delete();
-        return redirect()->route('admin.image.index',['cid'=>$cid]);
+        return redirect()->route('admin.image.index', ['cid' => $cid]);
 
     }
 }

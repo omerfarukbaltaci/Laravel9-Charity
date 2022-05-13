@@ -2,7 +2,6 @@
 
 @section('title','Edit Content')
 
-
 @section('content')
     <!-- ============================================================== -->
     <!-- wrapper  -->
@@ -72,23 +71,23 @@
                                        class="form-control" value="{{$data->type}}">
                             </div>
                             <div class="form-group">
-                                <label for="inputPassword">Testimonial</label>
-                                <input name="testimonial" type="text" placeholder="Testimonial"
-                                       class="form-control" value="{{$data->testimonial}}">
+                                <label for="inputPassword">Date</label>
+                                <input name="date" type="date" placeholder="Date"
+                                       class="form-control" value="{{$data->date}}">
                             </div>
                             <div class="form-group">
-                                <label for="inputPassword">Event</label>
-                                <input name="event" type="text" placeholder="Event"
-                                       class="form-control" value="{{$data->event}}">
+                                <label for="inputPassword">Location</label>
+                                <input name="location" type="text" placeholder="Location"
+                                       class="form-control" value="{{$data->location}}">
                             </div>
                             <div class="form-group">
-                                <label for="inputPassword">Donate</label>
-                                <input name="donate" type="text" placeholder="Donate"
-                                       class="form-control" value="{{$data->donate}}">
+                                <label for="inputPassword">Hour</label>
+                                <input name="hour" type="time" placeholder="Hour"
+                                       class="form-control" value="{{$data->hour}}">
                             </div>
                             <div class="form-group">
-                                <label for="inputPassword">Quantity</label>
-                                <input name="quantity" type="number" value="0"
+                                <label for="inputPassword">Donate Quantity</label>
+                                <input name="donateQuantity" type="number" value="{{$data->donateQuantity}}"
                                        class="form-control">
                             </div>
                             <div class="mb-3">
@@ -123,3 +122,4 @@
             </div>
         </div>
 @endsection
+

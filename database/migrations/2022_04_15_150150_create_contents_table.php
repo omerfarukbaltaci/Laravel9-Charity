@@ -23,10 +23,10 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->text('detail')->nullable();
             $table->string('type')->nullable();
-            $table->string('testimonial')->nullable();
-            $table->string('event')->nullable();
-            $table->float('donate')->nullable();
-            $table->float('quantity')->nullable();
+            $table->date('date')->nullable();
+            $table->string('location')->nullable();
+            $table->time('hour')->nullable();
+            $table->float('donateQuantity')->nullable();
             $table->string('status',6)->default('False');
             $table->timestamps();
         });
