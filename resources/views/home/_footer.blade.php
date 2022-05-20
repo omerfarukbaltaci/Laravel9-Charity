@@ -1,4 +1,3 @@
-<!-- Footer Start -->
 <div class="footer">
     <div class="container">
         <div class="row">
@@ -11,7 +10,6 @@
                     <div class="footer-social">
                         <a class="btn btn-custom" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-custom" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-custom" href=""><i class="fab fa-youtube"></i></a>
                         <a class="btn btn-custom" href=""><i class="fab fa-instagram"></i></a>
                         <a class="btn btn-custom" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
@@ -52,7 +50,7 @@
     <div class="container copyright">
         <div class="row">
             <div class="col-md-6">
-                <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
+                <p>© <a href="#">Your Site Name</a>, All Right Reserved.</p>
             </div>
             <div class="col-md-6">
                 <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
@@ -60,7 +58,6 @@
         </div>
     </div>
 </div>
-<!-- Footer End -->
 
 <!-- Back to top button -->
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
@@ -85,3 +82,4 @@
 
 <!-- Template Javascript -->
 <script src="{{asset('assets')}}/js/main.js"></script>
+

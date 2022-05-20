@@ -1,13 +1,17 @@
 @extends('layouts.frontbase')
 
-@section('title','Charity Project')
+@section('title',$setting->title)
+@section('description',$setting->description)
+@section('keywords',$setting->keywords)
+@section('icon',Storage::url($setting->icon))
+
 
 @section('slider')
     @include('home._slider')
 @endsection
 
 @section('content')
-    <!-- Carousel End -->
+
 
     <!-- Video Modal Start-->
     <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -420,178 +424,7 @@
                 <!-- Team End -->
 
 
-                <!-- Volunteer Start -->
-                <div class="volunteer" data-parallax="scroll" data-image-src="{{asset('assets')}}/img/volunteer.jpg">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-5">
-                                <div class="volunteer-form">
-                                    <form>
-                                        <div class="control-group">
-                                            <input type="text" class="form-control" placeholder="Name"
-                                                   required="required"/>
-                                        </div>
-                                        <div class="control-group">
-                                            <input type="email" class="form-control" placeholder="Email"
-                                                   required="required"/>
-                                        </div>
-                                        <div class="control-group">
-                                <textarea class="form-control" placeholder="Why you want to become a volunteer?"
-                                          required="required"></textarea>
-                                        </div>
-                                        <div>
-                                            <button class="btn btn-custom" type="submit">Become a volunteer</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-lg-7">
-                                <div class="volunteer-content">
-                                    <div class="section-header">
-                                        <p>Become A Volunteer</p>
-                                        <h2>Let’s make a difference in the lives of others</h2>
-                                    </div>
-                                    <div class="volunteer-text">
-                                        <p>
-                                            Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur
-                                            facilisis ornare
-                                            velit non. Aliquam metus tortor, auctor id gravida, viverra quis sem.
-                                            Curabitur non nisl
-                                            nec nisi maximus. Aenean convallis porttitor. Aliquam interdum at lacus non
-                                            blandit.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Volunteer End -->
 
-
-                <!-- Testimonial Start -->
-                <div class="testimonial">
-                    <div class="container">
-                        <div class="section-header text-center">
-                            <p>Testimonial</p>
-                            <h2>What people are talking about our charity activities</h2>
-                        </div>
-                        <div class="owl-carousel testimonials-carousel">
-                            <div class="testimonial-item">
-                                <div class="testimonial-profile">
-                                    <img src="{{asset('assets')}}/img/testimonial-1.jpg" alt="Image">
-                                    <div class="testimonial-name">
-                                        <h3>Person Name</h3>
-                                        <p>Profession</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-text">
-                                    <p>
-                                        Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non
-                                        vulputa. Aliqu
-                                        metus tortor, auctor id gravid vivera quis
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="testimonial-item">
-                                <div class="testimonial-profile">
-                                    <img src="{{asset('assets')}}/img/testimonial-2.jpg" alt="Image">
-                                    <div class="testimonial-name">
-                                        <h3>Person Name</h3>
-                                        <p>Profession</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-text">
-                                    <p>
-                                        Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non
-                                        vulputa. Aliqu
-                                        metus tortor, auctor id gravid vivera quis
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="testimonial-item">
-                                <div class="testimonial-profile">
-                                    <img src="{{asset('assets')}}/img/testimonial-3.jpg" alt="Image">
-                                    <div class="testimonial-name">
-                                        <h3>Person Name</h3>
-                                        <p>Profession</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-text">
-                                    <p>
-                                        Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non
-                                        vulputa. Aliqu
-                                        metus tortor, auctor id gravid vivera quis
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="testimonial-item">
-                                <div class="testimonial-profile">
-                                    <img src="{{asset('assets')}}/img/testimonial-4.jpg" alt="Image">
-                                    <div class="testimonial-name">
-                                        <h3>Person Name</h3>
-                                        <p>Profession</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-text">
-                                    <p>
-                                        Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non
-                                        vulputa. Aliqu
-                                        metus tortor, auctor id gravid vivera quis
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial End -->
-
-
-                <!-- Contact Start -->
-                <div class="contact">
-                    <div class="container">
-                        <div class="section-header text-center">
-                            <p>Get In Touch</p>
-                            <h2>Contact for any query</h2>
-                        </div>
-                        <div class="contact-img">
-                            <img src="{{asset('assets')}}/img/contact.jpg" alt="Image">
-                        </div>
-                        <div class="contact-form">
-                            <div id="success"></div>
-                            <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                                <div class="control-group">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name"
-                                           required="required"
-                                           data-validation-required-message="Please enter your name"/>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="control-group">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email"
-                                           required="required"
-                                           data-validation-required-message="Please enter your email"/>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="control-group">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject"
-                                           required="required"
-                                           data-validation-required-message="Please enter a subject"/>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="control-group">
-                        <textarea class="form-control" id="message" placeholder="Message" required="required"
-                                  data-validation-required-message="Please enter your message"></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div>
-                                    <button class="btn btn-custom" type="submit" id="sendMessageButton">Send Message
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- Contact End -->
 
 
                 <!-- Blog Start -->

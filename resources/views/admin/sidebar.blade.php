@@ -27,7 +27,7 @@
                         <a class="nav-link" href="/admin/comment" aria-expanded="false"><i class=" far fa-comments"></i>Comments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/message" aria-expanded="false"><i class="far fa-envelope"></i>Messages</a>
+                        <a class="nav-link" href="{{route('admin.message.index')}}" aria-expanded="false"><i class="far fa-envelope"></i>Messages</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/user" aria-expanded="false"><i class="fas fa-users"></i>Users</a>
@@ -43,7 +43,7 @@
                         <a class="nav-link" href="/admin/social" aria-expanded="false"><i class=" fas fa-comment"></i>Social Media</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/faq/" aria-expanded="false"><i class="fas fa-question"></i>FAQ</a>
+                        <a class="nav-link" href="{{route('admin.faq.index')}}" aria-expanded="false"><i class="fas fa-question"></i>FAQ</a>
                     </li>
 
 

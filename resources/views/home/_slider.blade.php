@@ -10,8 +10,7 @@
                     <div class="carousel-text">
                         <h1>{{$rs->title}}</h1>
                         <p>
-                            Lorem ipsum dolor sit amet elit. Phasellus ut mollis mauris. Vivamus egestas eleifend dui ac
-                            consequat at lectus in malesuada
+                           {{$rs->description}}
                         </p>
                         <div class="carousel-btn">
                             <a class="btn btn-custom" href="">Donate Now</a>

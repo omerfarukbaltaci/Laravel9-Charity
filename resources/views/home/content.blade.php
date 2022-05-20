@@ -16,8 +16,6 @@
                     <a href="">Home</a>
                     <a href="">Content</a>
                     <a href="">{{$data->menu->title}}</a>
-
-                    <a class="active">{{$data->title}}</a>
                 </div>
             </div>
         </div>
@@ -30,170 +28,65 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                        <div class="carousel">
-                            <div class="container-fluid">
-                                <div class="owl-carousel">
-                                    @foreach($images as $rs)
-                                        <div class="carousel-item">
-                                            <div class="carousel-img">
-                                                <img src="{{Storage::url($rs->image)}}" style="height: 500px;">
-                                            </div>
+                    <div class="carousel">
+                        <div class="container-fluid">
+                            <div class="owl-carousel">
+                                @foreach($images as $rs)
+                                    <div class="carousel-item">
+                                        <div class="carousel-img">
+                                            <img src="{{Storage::url($rs->image)}}"
+                                                 style="height: 450px">
                                         </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                        <h2>{{$data->title}}</h2>
-                        <p>{{$data->description}}</p>
-                    <div class="single-tags">
-                        <a href="">National</a>
-                        <a href="">International</a>
-                        <a href="">Economics</a>
-                        <a href="">Politics</a>
-                        <a href="">Lifestyle</a>
-                        <a href="">Technology</a>
-                        <a href="">Trades</a>
-                    </div>
-                    <div class="single-bio">
-                        <div class="single-bio-img">
-                            <img src="{{asset('assets')}}/img/user.jpg" />
-                        </div>
-                        <div class="single-bio-text">
-                            <h3>Author Name</h3>
-                            <p>
-                                {!!$data->detail!!}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="single-related">
-                        <h2>Related Post</h2>
-                        <div class="owl-carousel related-slider">
-                            <div class="post-item">
-                                <div class="post-img">
-                                    <img src="{{asset('assets')}}/img/post-1.jpg" />
-                                </div>
-                                <div class="post-text">
-                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                    <div class="post-meta">
-                                        <p>By<a href="">Admin</a></p>
-                                        <p>In<a href="">Web Design</a></p>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="post-item">
-                                <div class="post-img">
-                                    <img src="{{asset('assets')}}/img/post-2.jpg" />
-                                </div>
-                                <div class="post-text">
-                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                    <div class="post-meta">
-                                        <p>By<a href="">Admin</a></p>
-                                        <p>In<a href="">Web Design</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item">
-                                <div class="post-img">
-                                    <img src="{{asset('assets')}}/img/post-3.jpg" />
-                                </div>
-                                <div class="post-text">
-                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                    <div class="post-meta">
-                                        <p>By<a href="">Admin</a></p>
-                                        <p>In<a href="">Web Design</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-item">
-                                <div class="post-img">
-                                    <img src="{{asset('assets')}}/img/post-4.jpg" />
-                                </div>
-                                <div class="post-text">
-                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                    <div class="post-meta">
-                                        <p>By<a href="">Admin</a></p>
-                                        <p>In<a href="">Web Design</a></p>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
+                    <h2>{{$data->title}}</h2>
+                    <p>{{$data->description}}</p>
+
 
                     <div class="single-comment">
-                        <h2>3 Comments</h2>
+                        <h2>Comments</h2>
                         <ul class="comment-list">
-                            <li class="comment-item">
-                                <div class="comment-body">
-                                    <div class="comment-img">
-                                        <img src="{{asset('assets')}}/img/user.jpg" />
-                                    </div>
-                                    <div class="comment-text">
-                                        <h3><a href="">Josh Dunn</a></h3>
-                                        <span>01 Jan 2045 at 12:00pm</span>
-                                        <p>
-                                            Lorem ipsum dolor sit amet elit. Integer lorem augue purus mollis sapien, non eros leo in nunc. Donec a nulla vel turpis tempor ac vel justo. In hac platea dictumst.
-                                        </p>
-                                        <a class="btn" href="">Reply</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="comment-item">
-                                <div class="comment-body">
-                                    <div class="comment-img">
-                                        <img src="{{asset('assets')}}/img/user.jpg" />
-                                    </div>
-                                    <div class="comment-text">
-                                        <h3><a href="">Josh Dunn</a></h3>
-                                        <p><span>01 Jan 2045 at 12:00pm</span></p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet elit. Integer lorem augue purus mollis sapien, non eros leo in nunc. Donec a nulla vel turpis tempor ac vel justo. In hac platea dictumst.
-                                        </p>
-                                        <a class="btn" href="">Reply</a>
-                                    </div>
-                                </div>
-                                <ul class="comment-child">
-                                    <li class="comment-item">
-                                        <div class="comment-body">
-                                            <div class="comment-img">
-                                                <img src="{{asset('assets')}}/img/user.jpg" />
-                                            </div>
-                                            <div class="comment-text">
-                                                <h3><a href="">Josh Dunn</a></h3>
-                                                <p><span>01 Jan 2045 at 12:00pm</span></p>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet elit. Integer lorem augue purus mollis sapien, non eros leo in nunc. Donec a nulla vel turpis tempor ac vel justo. In hac platea dictumst.
-                                                </p>
-                                                <a class="btn" href="">Reply</a>
-                                            </div>
+                            @include('home.messages')
+                            @foreach($reviews as $rs)
+                                <li class="comment-item">
+                                    <div class="comment-body">
+                                        <div class="comment-img">
+                                            <img src="{{asset('assets')}}/img/usericon2.jpg" style="height: 50px">
                                         </div>
-                                    </li>
-                                </ul>
-                            </li>
+                                        <div class="comment-text">
+                                            <h3><a>{{$rs->user->name}}</a></h3>
+                                            <span>{{$rs->created_at}}</span>
+                                            <strong>{{$rs->subject}}</strong>
+                                            <p>{{$rs->review}}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="comment-form">
                         <h2>Leave a comment</h2>
-                        <form>
+                        <form class="review-text" action="{{route('storecomment')}}" method="post">
+                            @csrf
+                            <input type="hidden" class="form-group" name="content_id" value="{{$data->id}}">
                             <div class="form-group">
-                                <label for="name">Name *</label>
-                                <input type="text" class="form-control" id="name">
+                                <label for="name">Subject</label>
+                                <input type="text" class="form-control" name="subject" placeholder="Subject">
                             </div>
                             <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" class="form-control" id="email">
+                                <label for="review">Message *</label>
+                                <textarea name="review" cols="30" rows="5" class="form-control" placeholder="Your Message"></textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="website">Website</label>
-                                <input type="url" class="form-control" id="website">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" value="Post Comment" class="btn btn-custom">
-                            </div>
+                            @auth
+                                <div class="form-group">
+                                    <button class="btn btn-custom">Submit</button>
+                                </div>
+                            @else
+                                <a href="/login" class="btn btn-custom">Please login your account</a>
+                            @endauth
                         </form>
                     </div>
                 </div>
@@ -214,7 +107,7 @@
                             <div class="recent-post">
                                 <div class="post-item">
                                     <div class="post-img">
-                                        <img src="{{asset('assets')}}/img/post-1.jpg" />
+                                        <img src="{{asset('assets')}}/img/post-1.jpg"/>
                                     </div>
                                     <div class="post-text">
                                         <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -226,7 +119,7 @@
                                 </div>
                                 <div class="post-item">
                                     <div class="post-img">
-                                        <img src="{{asset('assets')}}/img/post-2.jpg" />
+                                        <img src="{{asset('assets')}}/img/post-2.jpg"/>
                                     </div>
                                     <div class="post-text">
                                         <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -238,7 +131,7 @@
                                 </div>
                                 <div class="post-item">
                                     <div class="post-img">
-                                        <img src="{{asset('assets')}}/img/post-3.jpg" />
+                                        <img src="{{asset('assets')}}/img/post-3.jpg"/>
                                     </div>
                                     <div class="post-text">
                                         <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -250,7 +143,7 @@
                                 </div>
                                 <div class="post-item">
                                     <div class="post-img">
-                                        <img src="{{asset('assets')}}/img/post-4.jpg" />
+                                        <img src="{{asset('assets')}}/img/post-4.jpg"/>
                                     </div>
                                     <div class="post-text">
                                         <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -262,7 +155,7 @@
                                 </div>
                                 <div class="post-item">
                                     <div class="post-img">
-                                        <img src="{{asset('assets')}}/img/post-5.jpg" />
+                                        <img src="{{asset('assets')}}/img/post-5.jpg"/>
                                     </div>
                                     <div class="post-text">
                                         <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -299,7 +192,7 @@
                                     <div id="featured" class="container tab-pane active">
                                         <div class="post-item">
                                             <div class="post-img">
-                                                <img src="{{asset('assets')}}/img/post-1.jpg" />
+                                                <img src="{{asset('assets')}}/img/post-1.jpg"/>
                                             </div>
                                             <div class="post-text">
                                                 <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -311,7 +204,7 @@
                                         </div>
                                         <div class="post-item">
                                             <div class="post-img">
-                                                <img src="{{asset('assets')}}/img/post-2.jpg" />
+                                                <img src="{{asset('assets')}}/img/post-2.jpg"/>
                                             </div>
                                             <div class="post-text">
                                                 <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -323,7 +216,7 @@
                                         </div>
                                         <div class="post-item">
                                             <div class="post-img">
-                                                <img src="{{asset('assets')}}/img/post-3.jpg" />
+                                                <img src="{{asset('assets')}}/img/post-3.jpg"/>
                                             </div>
                                             <div class="post-text">
                                                 <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -335,7 +228,7 @@
                                         </div>
                                         <div class="post-item">
                                             <div class="post-img">
-                                                <img src="{{asset('assets')}}/img/post-4.jpg" />
+                                                <img src="{{asset('assets')}}/img/post-4.jpg"/>
                                             </div>
                                             <div class="post-text">
                                                 <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -347,7 +240,7 @@
                                         </div>
                                         <div class="post-item">
                                             <div class="post-img">
-                                                <img src="{{asset('assets')}}/img/post-5.jpg" />
+                                                <img src="{{asset('assets')}}/img/post-5.jpg"/>
                                             </div>
                                             <div class="post-text">
                                                 <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -361,7 +254,7 @@
                                     <div id="popular" class="container tab-pane fade">
                                         <div class="post-item">
                                             <div class="post-img">
-                                                <img src="{{asset('assets')}}/img/post-1.jpg" />
+                                                <img src="{{asset('assets')}}/img/post-1.jpg"/>
                                             </div>
                                             <div class="post-text">
                                                 <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -373,7 +266,7 @@
                                         </div>
                                         <div class="post-item">
                                             <div class="post-img">
-                                                <img src="{{asset('assets')}}/img/post-2.jpg" />
+                                                <img src="{{asset('assets')}}/img/post-2.jpg"/>
                                             </div>
                                             <div class="post-text">
                                                 <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -385,7 +278,7 @@
                                         </div>
                                         <div class="post-item">
                                             <div class="post-img">
-                                                <img src="{{asset('assets')}}/img/post-3.jpg" />
+                                                <img src="{{asset('assets')}}/img/post-3.jpg"/>
                                             </div>
                                             <div class="post-text">
                                                 <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -397,7 +290,7 @@
                                         </div>
                                         <div class="post-item">
                                             <div class="post-img">
-                                                <img src="{{asset('assets')}}/img/post-4.jpg" />
+                                                <img src="{{asset('assets')}}/img/post-4.jpg"/>
                                             </div>
                                             <div class="post-text">
                                                 <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -409,7 +302,7 @@
                                         </div>
                                         <div class="post-item">
                                             <div class="post-img">
-                                                <img src="{{asset('assets')}}/img/post-5.jpg" />
+                                                <img src="{{asset('assets')}}/img/post-5.jpg"/>
                                             </div>
                                             <div class="post-text">
                                                 <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -423,7 +316,7 @@
                                     <div id="latest" class="container tab-pane fade">
                                         <div class="post-item">
                                             <div class="post-img">
-                                                <img src="{{asset('assets')}}/img/post-1.jpg" />
+                                                <img src="{{asset('assets')}}/img/post-1.jpg"/>
                                             </div>
                                             <div class="post-text">
                                                 <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -435,7 +328,7 @@
                                         </div>
                                         <div class="post-item">
                                             <div class="post-img">
-                                                <img src="{{asset('assets')}}/img/post-2.jpg" />
+                                                <img src="{{asset('assets')}}/img/post-2.jpg"/>
                                             </div>
                                             <div class="post-text">
                                                 <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -447,7 +340,7 @@
                                         </div>
                                         <div class="post-item">
                                             <div class="post-img">
-                                                <img src="{{asset('assets')}}/img/post-3.jpg" />
+                                                <img src="{{asset('assets')}}/img/post-3.jpg"/>
                                             </div>
                                             <div class="post-text">
                                                 <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -459,7 +352,7 @@
                                         </div>
                                         <div class="post-item">
                                             <div class="post-img">
-                                                <img src="{{asset('assets')}}/img/post-4.jpg" />
+                                                <img src="{{asset('assets')}}/img/post-4.jpg"/>
                                             </div>
                                             <div class="post-text">
                                                 <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -471,7 +364,7 @@
                                         </div>
                                         <div class="post-item">
                                             <div class="post-img">
-                                                <img src="{{asset('assets')}}/img/post-5.jpg" />
+                                                <img src="{{asset('assets')}}/img/post-5.jpg"/>
                                             </div>
                                             <div class="post-text">
                                                 <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
@@ -530,7 +423,9 @@
                             <h2 class="widget-title">Text Widget</h2>
                             <div class="text-widget">
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Integer lorem augue purus mollis sapien, non eros leo in nunc. Donec a nulla vel turpis tempor ac vel justo. In hac platea nec eros. Nunc eu enim non turpis id augue.
+                                    Lorem ipsum dolor sit amet elit. Integer lorem augue purus mollis sapien, non eros
+                                    leo in nunc. Donec a nulla vel turpis tempor ac vel justo. In hac platea nec eros.
+                                    Nunc eu enim non turpis id augue.
                                 </p>
                             </div>
                         </div>

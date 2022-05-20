@@ -37,7 +37,7 @@
                                             <div class="notification-info">
                                                 <div class="notification-list-user-img"><img src="{{asset('assets')}}/admin/assets/images/avatar-3.jpg" alt="" class="user-avatar-md rounded-circle"></div>
                                                 <div class="notification-list-user-block"><span class="notification-list-user-name">
-John Abraham</span>is now following you
+}</span>is now following you
                                                     <div class="notification-date">2 days ago</div>
                                                 </div>
                                             </div>
@@ -103,12 +103,12 @@ John Abraham</span>is now following you
                         <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                             <div class="nav-user-info">
                                 <h5 class="mb-0 text-white nav-user-name">
-                                    John Abraham</h5>
+                                    {{Auth::user()->name}}</h5>
                                 <span class="status"></span><span class="ml-2">Available</span>
                             </div>
                             <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
                             <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                            <a class="dropdown-item" href="/logoutuser"><i class="fas fa-power-off mr-2"></i>Logout</a>
                         </div>
                     </li>
                 </ul>

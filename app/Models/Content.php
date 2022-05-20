@@ -12,4 +12,8 @@ class Content extends Model
     public function menu() {
         return $this->belongsTo(Menu::class);
     }
+
+    public function comment() {
+        return $this->hasMany(Comment::class);
+    }
 }
