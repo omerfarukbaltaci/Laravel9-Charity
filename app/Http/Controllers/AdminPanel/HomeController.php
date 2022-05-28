@@ -39,6 +39,10 @@ class HomeController extends Controller
         $data->smtpemail = $request->input('smtpemail');
         $data->smtppassword = $request->input('smtppassword');
         $data->smtpport = $request->input('smtpport');
+        $data->countries = $request->input('countries');
+        $data->volunteers = $request->input('volunteers');
+        $data->goal = $request->input('goal');
+        $data->raised = $request->input('raised');
         $data->facebook = $request->input('facebook');
         $data->twitter = $request->input('twitter');
         $data->instagram = $request->input('instagram');
@@ -53,9 +57,4 @@ class HomeController extends Controller
         $data->save();
         return redirect()->route('admin.setting');
     }
-
-
-
-
-
 }

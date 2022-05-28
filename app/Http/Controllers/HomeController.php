@@ -99,12 +99,14 @@ class HomeController extends Controller
     public function content($id)
     {
         $data = Content::find($id);
+        $setting = Setting::first();
         $images = DB::table('images')->where('content_id',$id)->get();
         $reviews = Comment::where('content_id',$id)->where('status','True')->get();
         return view('home.content', [
             'data' => $data,
             'images' => $images,
-            'reviews' => $reviews
+            'reviews' => $reviews,
+            'setting' => $setting,
 
         ]);
     }
@@ -112,10 +114,12 @@ class HomeController extends Controller
     public function menucontents($id)
     {
         $menu = Menu::find($id);
+        $setting = Setting::first();
         $contents = DB::table('contents')->where('menu_id',$id)->get();
         return view('home.menucontents', [
             'menu' => $menu,
-            'contents' => $contents
+            'contents' => $contents,
+            'setting' => $setting,
         ]);
     }
 

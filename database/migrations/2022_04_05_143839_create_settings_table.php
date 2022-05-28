@@ -36,6 +36,10 @@ return new class extends Migration
             $table->text('references')->nullable();
             $table->string('icon',100)->nullable();
             $table->string('status',5)->nullable()->default('False');
+            $table->integer('countries')->nullable()->default(0);
+            $table->integer('volunteers')->nullable()->default(0);
+            $table->integer('goal')->nullable()->default(0);
+            $table->integer('raised')->nullable()->default(0);
             $table->timestamps();
         });
     }

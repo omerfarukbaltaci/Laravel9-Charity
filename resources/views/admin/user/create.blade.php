@@ -1,4 +1,4 @@
-@extends('layouts.adminbase')
+extends('layouts.adminbase')
 
 @section('title','Add Content')
 @section('head')

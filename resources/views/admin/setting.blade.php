@@ -80,6 +80,12 @@
                                            href="#custom-tabs-one-references"
                                            role="tab" aria-controls="custom-tabs-one-references" aria-selected="false">References</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="custom-tabs-one-services-tab" data-toggle="tab"
+                                           href="#custom-tabs-one-services"
+                                           role="tab" aria-controls="custom-tabs-one-services" aria-selected="false">Services
+                                            </a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="card-body">
@@ -179,7 +185,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Twitter</label>
-                                                <input type="password" name="twitter"
+                                                <input type="text" name="twitter"
                                                        value="{{$data->twitter}}" class="form-control">
                                             </div>
                                             <div class="form-group">
@@ -254,6 +260,31 @@
                                                             console.error(error);
                                                         });
                                                 </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="custom-tabs-one-services" role="tabpanel"
+                                         aria-labelledby="custom-tabs-one-services-tab">
+                                        <div class="card-body">
+                                            <div class="form-group">
+                                                <label>Countries</label>
+                                                <input type="text" name="countries"
+                                                       value="{{$data->countries}}" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Volunteers</label>
+                                                <input type="text" name="volunteers"
+                                                       value="{{$data->volunteers}}" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Goal</label>
+                                                <input type="text" name="goal"
+                                                       value="{{$data->goal}}" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Raised</label>
+                                                <input type="text" name="raised"
+                                                       value="{{$data->raised}}" class="form-control">
                                             </div>
                                         </div>
                                     </div>

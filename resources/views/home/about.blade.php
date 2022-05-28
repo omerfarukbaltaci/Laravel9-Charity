@@ -15,23 +15,15 @@
                 </div>
                 <div class="col-12">
                     <a href="{{route('home')}}">Home</a>
-                    <a href="{{route('about')}}">About</a>
+                    <a href="{{route('about')}}">About Us</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="team">
         <div class="container">
-            <div class="section-header text-center">
-                <p>About Us</p>
-            </div>
             <div class="row">
-
                     {!! $setting->aboutus !!}
-
-
-
-
             </div>
         </div>
     </div>

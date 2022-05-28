@@ -10,6 +10,7 @@
     <link rel="icon" type="image/x-icon" href="@yield("icon")">
 
 
+
     <!-- Favicon -->
     <link href="{{asset('assets')}}/img/favicon.ico" rel="icon">
 

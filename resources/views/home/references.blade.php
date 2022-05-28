@@ -23,12 +23,10 @@
     <div class="team">
         <div class="container">
             <div class="section-header text-center">
-                <p>About Us</p>
+                <p>References</p>
             </div>
             <div class="row">
-
                     {!! $setting->references !!}
-
             </div>
         </div>
     </div>

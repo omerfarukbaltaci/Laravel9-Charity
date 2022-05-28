@@ -55,14 +55,6 @@
             <div class="navbar-nav ">
 
                 <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
-                <a href="{{asset('assets')}}/about.html" class="nav-item nav-link">About</a>
-                <a href="{{asset('assets')}}/causes.html" class="nav-item nav-link">Causes</a>
-                <a href="{{route('home')}}" class="nav-item nav-link">Home</a>
-                <a href="{{route('about')}}" class="nav-item nav-link">About</a>
-                <a href="{{route('references')}}" class="nav-item nav-link">References</a>
-                <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
-                <a href="{{route('faq')}}" class="nav-item nav-link">FAQ</a>
-
                 <!--deneme alanı -->
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
@@ -89,6 +81,12 @@
                 </div> <!-- navbar-collapse.// -->
 
                 <!--deneme alanı -->
+                <a href="{{route('about')}}" class="nav-item nav-link">About Us</a>
+                <a href="{{route('references')}}" class="nav-item nav-link">References</a>
+                <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
+                <a href="{{route('faq')}}" class="nav-item nav-link">FAQ</a>
+
+
                 <div class="navbar-nav ml-auto">
                     <li class="nav-item dropdown nav-user">
 
@@ -136,3 +134,4 @@
     }
 </script>
 <!-- Nav Bar End -->
+
