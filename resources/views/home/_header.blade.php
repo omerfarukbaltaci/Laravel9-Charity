@@ -1,4 +1,3 @@
-
 <body>
 <!-- Top Bar Start -->
 <div class="top-bar d-none d-md-block">
@@ -18,6 +17,11 @@
             </div>
             <div class="col-md-4">
                 <div class="top-bar-right">
+                    <form action="{{route('getcontent')}}" method="post">
+                        @csrf
+                        @livewire('search')
+                    </form>
+                    @livewireScripts
                     <div class="social">
                         <a href="{{$setting->twitter}}"><i class="fab fa-twitter"></i></a>
                         <a href="{{$setting->facebook}}"><i class="fab fa-facebook-f"></i></a>

@@ -46,6 +46,8 @@ Route::view('/registeruser', 'home.register')->name('registeruser');
 Route::get('/logoutuser', [HomeController::class, 'logout'])->name('logoutuser');
 Route::view('/loginadmin', 'admin.login')->name('loginadmin');
 Route::post('/loginadmincheck', [HomeController::class, 'loginadmincheck'])->name('loginadmincheck');
+Route::post('/getcontent', [HomeController::class,'getcontent'])->name('getcontent');
+
 
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('myprofile');

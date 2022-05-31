@@ -35,7 +35,6 @@ class HomeController extends Controller
     }
 
 
-
     public function about()
     {
         $setting = Setting::first();
@@ -115,6 +114,12 @@ class HomeController extends Controller
             'setting' => $setting,
 
         ]);
+    }
+
+    public function getcontent(Request $request)
+    {
+        $data = Content::where('title',$request->input('search'))->first();
+        return redirect()->route('content',['id'=>$data->id,'slug'=>$data->slug]);
     }
 
     public function menucontents($id)

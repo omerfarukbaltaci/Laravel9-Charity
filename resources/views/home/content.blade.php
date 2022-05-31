@@ -1,4 +1,3 @@
-
 @extends('layouts.frontbase')
 
 @section('title',$data->title)
@@ -66,6 +65,9 @@
                                             <h3><a>{{$rs->user->name}}</a></h3>
                                             <span>{{$rs->created_at}}</span>
 
+                                            <div class="product-rating">
+
+                                            </div>
                                             <strong>{{$rs->subject}}</strong>
                                             <p>{{$rs->review}}</p>
                                         </div>
@@ -91,11 +93,11 @@
                             <div class="form-group">
                                 <strong class="text-uppercase">Your Rating:</strong>
                               <div class="product-rating">
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-fw fa-star -o empty"></i>
+                                  <i class="fa fa-fw fa-star"></i>
+                                  <i class="fa fa-fw fa-star"></i>
+                                  <i class="fa fa-fw fa-star"></i>
+                                  <i class="fa fa-fw fa-star"></i>
 
                               </div>
                             </div>
