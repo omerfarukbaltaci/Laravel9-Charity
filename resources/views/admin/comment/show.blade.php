@@ -34,6 +34,10 @@
                             <td scope="col">{{$data->review}}</td>
                         </tr>
                         <tr>
+                            <th scope="col">Rate</th>
+                            <td scope="col">{{$data->rate}}</td>
+                        </tr>
+                        <tr>
                             <th scope="col">IP Number</th>
                             <td scope="col">{{$data->IP}}</td>
                         </tr>

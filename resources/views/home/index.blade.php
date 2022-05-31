@@ -149,16 +149,16 @@
                 <h2>Be ready for our upcoming charity events</h2>
             </div>
             <div class="row">
-                <div class="col-lg-6">
-                    @foreach($contentlist1 as $rs)
+
+                @foreach($contentlist1 as $rs)
+                    <div class="col-lg-6">
                         <div class="event-item">
-                            <img src="{{Storage::url($rs->image)}}">
+                            <img src="{{Storage::url($rs->image)}}" style="height: 300px">
                             <div class="event-content">
                                 <div class="event-meta">
                                     <p><i class="fa fa-calendar-alt"></i>{{$rs->date}}</p>
                                     <p><i class="far fa-clock"></i>{{$rs->hour}}</p>
                                     <p><i class="fa fa-map-marker-alt"></i>{{$rs->location}}</p>
-                                    <p><i class="fa fa-user"></i> {{Auth::user()->name}}</p>
                                     <p><i class="fa fa-comments"></i> {{$rs->comment->count('id')}}
                                         Comments</p>
                                 </div>
@@ -172,8 +172,9 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                </div>
+
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

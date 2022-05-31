@@ -1,3 +1,4 @@
+
 @extends('layouts.frontbase')
 
 @section('title',$data->title)
@@ -51,7 +52,8 @@
                     <p>{{$data->description}}</p>
 
                     <div class="single-comment">
-                        <h2>{{$data->comment->count('id')}} Comments</h2>
+                        <h5>{{$data->comment->count('id')}} Comment(s)</h5>
+
                         <ul class="comment-list">
                             @include('home.messages')
                             @foreach($reviews as $rs)
@@ -63,6 +65,7 @@
                                         <div class="comment-text">
                                             <h3><a>{{$rs->user->name}}</a></h3>
                                             <span>{{$rs->created_at}}</span>
+
                                             <strong>{{$rs->subject}}</strong>
                                             <p>{{$rs->review}}</p>
                                         </div>
@@ -85,6 +88,18 @@
                                 <textarea name="review" cols="30" rows="5" class="form-control"
                                           placeholder="Your Message"></textarea>
                             </div>
+                            <div class="form-group">
+                                <strong class="text-uppercase">Your Rating:</strong>
+                              <div class="product-rating">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+
+                              </div>
+                            </div>
+
                             @auth
                                 <div class="form-group">
                                     <button class="btn btn-custom">Submit</button>
@@ -98,6 +113,6 @@
             </div>
         </div>
 
-    <!-- Single Post End-->
+        <!-- Single Post End-->
 
 @endsection

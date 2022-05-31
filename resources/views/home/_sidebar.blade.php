@@ -96,11 +96,14 @@
                              aria-labelledby="navbarDropdownMenuLink2">
                             @auth
                                 <div class="nav-user-info">
-
                                     <h6 class="mb-0 text-black nav-user-name">
                                         {{Auth::user()->name}} </h6>
                                 </div>
-                                <a class="dropdown-item" href="/logoutuser"><i class="fas fa-user mr-2"></i>Logout</a>
+                                <a class="dropdown-item" href="{{route('userpanel.index')}}"><i class="fas fa-user mr-2"></i>My Account</a>
+                                <a class="dropdown-item" href=""><i class="fas fa-donate mr-2"></i>My Donations</a>
+                                <a class="dropdown-item" href="{{route('userpanel.reviews')}}"><i class="fas fa-comment mr-2"></i>My Reviews</a>
+                                <a class="dropdown-item" href=""><i class="fas fa-edit mr-2"></i>My Events</a>
+                                <a class="dropdown-item" href="/logoutuser"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             @endauth
                             @guest
                                 <a class="dropdown-item" href="/loginuser"><i class="fas fa-user mr-2"></i>Login</a>

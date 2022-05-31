@@ -7,6 +7,7 @@ use App\Models\Content;
 use App\Models\Message;
 use App\Models\Role;
 use App\Models\RoleUser;
+use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -20,8 +21,10 @@ class AdminUserController extends Controller
     public function index()
     {
         $data = User::all();
+
         return view('admin.user.index',[
-            'data' => $data
+            'data' => $data,
+
         ]);
     }
 
@@ -59,7 +62,8 @@ class AdminUserController extends Controller
 
         return view('admin.user.show',[
             'data' => $data,
-            'roles' => $roles
+            'roles' => $roles,
+
 
         ]);
     }

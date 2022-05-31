@@ -22,6 +22,7 @@
                                     <th scope="col">Content</th>
                                     <th scope="col">Subject</th>
                                     <th scope="col">Review</th>
+                                    <th scope="col">Rate</th>
                                     <th scope="col">Status</th>
                                     <th scope="col" style="width: 40px">Show</th>
                                     <th scope="col" style="width: 40px">Delete</th>
@@ -38,6 +39,7 @@
                                         <td>{{$rs->content->title}}</td>
                                         <td>{{$rs->subject}}</td>
                                         <td>{{$rs->review}}</td>
+                                        <td>{{$rs->rate}}</td>
                                         <td>{{$rs->status}}</td>
 
                                         <td>

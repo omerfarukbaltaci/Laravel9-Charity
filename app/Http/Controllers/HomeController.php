@@ -8,6 +8,7 @@ use App\Models\Faq;
 use App\Models\Menu;
 use App\Models\Message;
 use App\Models\Setting;
+use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -33,6 +34,8 @@ class HomeController extends Controller
         ]);
     }
 
+
+
     public function about()
     {
         $setting = Setting::first();
@@ -40,6 +43,7 @@ class HomeController extends Controller
             'setting'=>$setting,
         ]);
     }
+
 
     public function references()
     {
@@ -90,11 +94,13 @@ class HomeController extends Controller
         $data->content_id = $request->input('content_id');
         $data->subject = $request->input('subject');
         $data->review = $request->input('review');
+        $data->rate = $request->input('rate');
         $data->ip = request()->ip();
         $data->save();
 
         return redirect()->route('content',['id'=>$request->input('content_id')])->with('success','Your comment has been sent. Thank you.');
     }
+
 
     public function content($id)
     {
@@ -131,6 +137,7 @@ class HomeController extends Controller
         return redirect('/');
     }
 
+
     public function loginadmincheck(Request $request)
     {
         $credentials = $request->validate([
@@ -140,7 +147,6 @@ class HomeController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
             return redirect()->intended('/admin');
         }
 
@@ -148,5 +154,4 @@ class HomeController extends Controller
             'error' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
     }
-
 }
