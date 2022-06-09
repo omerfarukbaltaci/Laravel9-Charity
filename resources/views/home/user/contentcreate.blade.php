@@ -1,43 +1,41 @@
-@extends('layouts.adminbase')
+@extends('layouts.frontbase')
 
-@section('title','Add Content')
+@section('title','User Content Edit')
 @section('head')
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 @endsection
 @section('content')
-    <!-- ============================================================== -->
-    <!-- wrapper  -->
-    <!-- ============================================================== -->
-    <div class="dashboard-wrapper">
-        <div class="container-fluid dashboard-content">
-            <!-- ============================================================== -->
-            <!-- pageheader -->
-            <!-- ============================================================== -->
+    <!-- Page Header Start -->
+    <div class="page-header">
+        <div class="container">
             <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div class="page-header">
-                        <h2 class="pageheader-title">Add Content</h2>
-                        <div class="page-breadcrumb">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{route('admin.index')}}"
-                                                                   class="breadcrumb-link">Dashboard</a></li>
-                                    <li class="breadcrumb-item"><a href="{{route('admin.content.index')}}"
-                                                                   class="breadcrumb-link">Menu</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Add Menu</li>
-                                </ol>
-                            </nav>
+                <div class="col-12">
+                    <h2>User Panel</h2>
+                </div>
+                <div class="col-12">
+                    <a href="{{route('home')}}">Home</a>
+                    <a href="{{route('userpanel.contents')}}">User Contents</a>
+                    <a href="#">User Content Edit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="single">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="sidebar">
+                        <div class="sidebar-widget">
+                            <h2 class="widget-title">User Menu</h2>
+                            @include('home.user.usermenu')
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- ============================================================== -->
-            <!-- end pageheader -->
-            <!-- ============================================================== -->
-            <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div class="card-body">
-                        <form role="form" action="{{route('admin.content.store')}}" method="post"
+                <div class="col-lg-10">
+                    <div class="single-content">
+                        <h5 class="card-header">Create Content</h5>
+                        <form role="form" action="{{route('userpanel.contentstore')}}" method="post"
                               enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
@@ -125,4 +123,8 @@
                 </div>
             </div>
         </div>
+    </div>
+
+
+
 @endsection

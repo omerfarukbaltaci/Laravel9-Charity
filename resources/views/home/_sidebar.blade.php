@@ -54,7 +54,7 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ">
 
-                <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
+                <a href="{{route('home')}}" class="nav-item nav-link">Home</a>
                 <!--deneme alanı -->
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">

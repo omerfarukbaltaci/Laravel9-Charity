@@ -23,7 +23,7 @@
         margin-top: 0.5vw;
         background-color: #eeeeee;
         text-align: left;
-        color: #9e9e9e;
+        color: black;
     }
     .sec:hover{
         width: 110%;

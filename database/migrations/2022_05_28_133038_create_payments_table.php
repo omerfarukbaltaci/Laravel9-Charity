@@ -13,16 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->integer('user_id');
-            $table->integer('content_id');
-            $table->string('subject',100);
-            $table->string('review')->nullable();
-            $table->integer('rate')->default('0');
-            $table->string('IP',20)->nullable();
+            $table->year('year');
+            $table->string('payment');
+            $table->string('note');
             $table->string('status',5)->default('New');
             $table->timestamps();
+
         });
     }
 
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('payments');
     }
 };

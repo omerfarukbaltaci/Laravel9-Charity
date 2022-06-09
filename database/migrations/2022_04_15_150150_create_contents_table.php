@@ -26,7 +26,6 @@ return new class extends Migration
             $table->date('date')->nullable();
             $table->string('location')->nullable();
             $table->time('hour')->nullable();
-            $table->float('donateQuantity')->nullable();
             $table->string('status',6)->default('False');
             $table->timestamps();
         });

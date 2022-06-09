@@ -14,6 +14,6 @@ class Content extends Model
     }
 
     public function comment() {
-        return $this->hasMany(Comment::class);
+        return $this->hasOne(Comment::class);
     }
 }

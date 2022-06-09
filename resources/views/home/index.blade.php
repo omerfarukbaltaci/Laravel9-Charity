@@ -159,8 +159,7 @@
                                     <p><i class="fa fa-calendar-alt"></i>{{$rs->date}}</p>
                                     <p><i class="far fa-clock"></i>{{$rs->hour}}</p>
                                     <p><i class="fa fa-map-marker-alt"></i>{{$rs->location}}</p>
-                                    <p><i class="fa fa-comments"></i> {{$rs->comment->count('id')}}
-                                        Comments</p>
+
                                 </div>
                                 <div class="event-text">
                                     <h3>{{$rs->title}}</h3>

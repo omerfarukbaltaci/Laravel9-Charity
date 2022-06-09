@@ -4,6 +4,8 @@ namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
+use App\Models\Content;
+use App\Models\Menu;
 use App\Models\Message;
 use Illuminate\Http\Request;
 
@@ -92,6 +94,8 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Comment::find($id);
+        $data->delete();
+        return redirect(route('admin.comment.index'));
     }
 }

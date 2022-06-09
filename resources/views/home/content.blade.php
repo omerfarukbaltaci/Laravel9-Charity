@@ -49,9 +49,11 @@
                     </div>
                     <h2>{{$data->title}}</h2>
                     <p>{{$data->description}}</p>
-
+                    @php
+                        $average = $data->comment->average('rate')
+                    @endphp
                     <div class="single-comment">
-                        <h5>{{$data->comment->count('id')}} Comment(s)</h5>
+                        <h5><a class="fas fa-star">{{number_format($average,1)}} / {{$data->comment->count('id')}} Comment(s)</a><h5>
 
                         <ul class="comment-list">
                             @include('home.messages')
@@ -64,10 +66,7 @@
                                         <div class="comment-text">
                                             <h3><a>{{$rs->user->name}}</a></h3>
                                             <span>{{$rs->created_at}}</span>
-
-                                            <div class="product-rating">
-
-                                            </div>
+                                            <a class="fas fa-star"> {{$rs->rate}}</a><br>
                                             <strong>{{$rs->subject}}</strong>
                                             <p>{{$rs->review}}</p>
                                         </div>
@@ -92,14 +91,14 @@
                             </div>
                             <div class="form-group">
                                 <strong class="text-uppercase">Your Rating:</strong>
-                              <div class="product-rating">
-                                  <i class="fa fa-fw fa-star -o empty"></i>
-                                  <i class="fa fa-fw fa-star"></i>
-                                  <i class="fa fa-fw fa-star"></i>
-                                  <i class="fa fa-fw fa-star"></i>
-                                  <i class="fa fa-fw fa-star"></i>
-
-                              </div>
+                                <li class="fas fa-star"></li>
+                                <select name="rate">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
                             </div>
 
                             @auth
