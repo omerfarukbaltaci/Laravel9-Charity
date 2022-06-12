@@ -21,12 +21,14 @@
                     <a href="{{route('about')}}">About Us</a>
                     <a href="{{route('contact')}}">Contact Us</a>
                     <a href="{{route('references')}}">References</a>
+
                 </div>
             </div>
             <div class="col-lg-4 col-md-8">
                 <div class="footer-link">
                     <h2>Useful Links</h2>
                     <a href="{{route('faq')}}">FAQs</a>
+                    <a href="{{route('payment.index')}}">Donate Now</a>
                 </div>
             </div>
 

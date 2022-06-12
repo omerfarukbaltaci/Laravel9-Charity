@@ -30,12 +30,14 @@
                         <a class="nav-link" href="{{route('admin.message.index')}}" aria-expanded="false"><i class="far fa-envelope"></i>Messages</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.donation')}}" aria-expanded="false"><i class="fas fa-donate"></i>Donations</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/admin/user" aria-expanded="false"><i class="fas fa-users"></i>Users</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/image" aria-expanded="false"><i class="fas fa-images"></i>Images</a>
                     </li>
-                    <li class="nav-divider">Labels</li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/setting" aria-expanded="false"><i class="fas fa-cogs"></i>Settings</a>
                     </li>

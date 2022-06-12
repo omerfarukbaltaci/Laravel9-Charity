@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -93,6 +94,17 @@ Route::middleware('auth')->group(function () {
         Route::get('/menuedit/{id}', [MenuController::class, 'menuedit'])->name('menuedit');
         Route::post('/menuupdate/{id}', [MenuController::class, 'menuupdate'])->name('menuupdate');
         Route::get('/menudestroy/{id}', [MenuController::class, 'menudestroy'])->name('menudestroy');
+
+        #User Panel Donations
+        Route::get('/donations', 'donations')->name('donations');
+
+    });
+
+    #Payment Routes
+    Route::prefix('payment')->name('payment.')->controller(PaymentController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::post('/donate', 'donate')->name('donate');
+        Route::post('/storedonate', 'storedonate')->name('storedonate');
     });
 
 
@@ -102,6 +114,9 @@ Route::middleware('auth')->group(function () {
 // *************** GENERAL ROUTES ***************
         Route::get('/setting', [AdminHomeController::class, 'setting'])->name('setting');
         Route::post('/setting', [AdminHomeController::class, 'settingUpdate'])->name('setting.update');
+        Route::get('/donation', [AdminHomeController::class, 'donation'])->name('donation');
+        Route::get('/donatedestroy/{id}', [AdminHomeController::class, 'donatedestroy'])->name('donatedestroy');
+
 // *************** ADMIN MENU ROUTES ****************
         Route::prefix('/menu')->name('menu.')->controller(AdminMenuController::class)->group(function () {
             Route::get('/', 'index')->name('index');

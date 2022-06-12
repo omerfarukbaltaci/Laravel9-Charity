@@ -7,7 +7,9 @@ use App\Models\Content;
 use App\Models\Faq;
 use App\Models\Menu;
 use App\Models\Message;
+use App\Models\Payment;
 use App\Models\Setting;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -21,14 +23,18 @@ class HomeController extends Controller
     public function index()
     {
         $page = 'home';
+        $volunteers = User::all();
         $sliderdata = Content::limit(4)->get();
         $contentlist1 = Content::limit(6)->get();
+        $data = Payment::all();
         $setting = Setting::first();
         return view('home.index', [
             'page'=>$page,
             'setting'=>$setting,
             'sliderdata' => $sliderdata,
-            'contentlist1' => $contentlist1
+            'contentlist1' => $contentlist1,
+            'data'=>$data,
+            'volunteers' => $volunteers
 
         ]);
     }

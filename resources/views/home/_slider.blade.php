@@ -14,7 +14,7 @@
                         </p>
                         <div class="carousel-btn">
                             <a class="btn btn-custom btn-play" href="{{route('content',['id'=>$rs->id])}}">Learn More</a>
-                            <a class="btn btn-custom" href="">Donate Now</a>
+                            <a class="btn btn-custom" href="{{route('payment.index')}}">Donate Now</a>
                         </div>
                     </div>
                 </div>

@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->integer('user_id');
-            $table->year('year');
-            $table->string('payment');
+            $table->date('year');
+            $table->integer('payment');
             $table->string('note');
             $table->string('status',5)->default('New');
             $table->timestamps();

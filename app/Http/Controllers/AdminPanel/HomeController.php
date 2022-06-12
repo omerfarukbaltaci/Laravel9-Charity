@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
+use App\Models\Menu;
+use App\Models\Payment;
 use App\Models\Setting;
 use Hamcrest\Core\Set;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -24,6 +28,15 @@ class HomeController extends Controller
         }
         return view("admin.setting",['data'=>$data]);
     }
+
+    public function donation()
+    {
+        $data = Payment::all();
+        return view('admin.donation', [
+            'data'=>$data,
+        ]);
+    }
+
 
     public function settingUpdate(Request $request) {
         $id = $request->input('id');

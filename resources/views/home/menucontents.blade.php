@@ -39,7 +39,7 @@
                                         {{$rs->description}}
                                     </p>
                                     <a class="btn btn-custom" href="{{route('content',['id'=>$rs->id])}}">Learn More</a>
-                                    <a class="btn btn-custom" href="{{route('content',['id'=>$rs->id])}}">Donate Now</a>
+                                    <a class="btn btn-custom" href="{{route('payment.index')}}">Donate Now</a>
                                 </div>
                             </div>
                         </div>

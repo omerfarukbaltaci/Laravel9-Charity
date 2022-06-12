@@ -39,7 +39,7 @@
                                         <div class="carousel-text">
                                             <h1>{{$rs->title}}</h1>
                                             <div class="carousel-btn">
-                                                <a class="btn btn-custom" href="">Donate Now</a>
+                                                <a class="btn btn-custom" href="{{route('payment.index')}}">Donate Now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -48,12 +48,12 @@
                         </div>
                     </div>
                     <h2>{{$data->title}}</h2>
-                    <p>{{$data->description}}</p>
+                    <p> {!! $data->detail !!}</p>
                     @php
-                        $average = $data->comment->average('rate')
+
                     @endphp
                     <div class="single-comment">
-                        <h5><a class="fas fa-star">{{number_format($average,1)}} / {{$data->comment->count('id')}} Comment(s)</a><h5>
+                        <h5><a class="fas fa-star"> /  Comment(s)</a><h5>
 
                         <ul class="comment-list">
                             @include('home.messages')

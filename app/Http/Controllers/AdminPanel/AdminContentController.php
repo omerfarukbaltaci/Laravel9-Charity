@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Content;
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class AdminContentController extends Controller
@@ -49,7 +50,7 @@ class AdminContentController extends Controller
         //
         $data = new Content();
         $data->menu_id = $request->menu_id;
-        $data->user_id = 0; // $request->user_id;
+        $data->user_id = Auth::id();
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
@@ -58,7 +59,6 @@ class AdminContentController extends Controller
         $data->date = $request->date;
         $data->hour = $request->hour;
         $data->location = $request->location;
-        $data->donateQuantity = $request->donateQuantity;
 
         $data->status = $request->status;
         if ($request->file('image')) {
@@ -121,7 +121,7 @@ class AdminContentController extends Controller
         $data->date = $request->date;
         $data->hour = $request->hour;
         $data->location = $request->location;
-        $data->donateQuantity = $request->donateQuantity;
+
 
         $data->status = $request->status;
         if ($request->file('image')) {

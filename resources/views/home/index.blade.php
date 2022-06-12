@@ -105,11 +105,12 @@
                         </div>
                     </div>
                 </div>
+                @php($volunteerlist = count($volunteers))
                 <div class="col-lg-3 col-md-6">
                     <div class="facts-item">
                         <i class="flaticon-charity"></i>
                         <div class="facts-text">
-                            <h3 class="facts-plus" data-toggle="counter-up">{{$setting->volunteers}}</h3>
+                            <h3 class="facts-plus" data-toggle="counter-up">{{$volunteerlist}}</h3>
                             <p>Volunteers</p>
                         </div>
                     </div>
@@ -123,11 +124,15 @@
                         </div>
                     </div>
                 </div>
+                @php($total = 0)
+                @foreach($data as $rs)
+                    @php($total += $rs->payment)
+                @endforeach
                 <div class="col-lg-3 col-md-6">
                     <div class="facts-item">
                         <i class="flaticon-donation"></i>
                         <div class="facts-text">
-                            <h3 class="facts-dollar" data-toggle="counter-up">{{$setting->raised}}</h3>
+                            <h3 class="facts-dollar" data-toggle="counter-up">{{$total}}</h3>
                             <p>Raised</p>
                         </div>
                     </div>
@@ -167,7 +172,7 @@
                                         {{$rs->description}}
                                     </p>
                                     <a class="btn btn-custom" href="{{route('content',['id'=>$rs->id])}}">Learn More</a>
-                                    <a class="btn btn-custom" href="{{route('content',['id'=>$rs->id])}}">Donate Now</a>
+                                    <a class="btn btn-custom" href="{{route('payment.index')}}">Donate Now</a>
                                 </div>
                             </div>
                         </div>

@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     use HasFactory;
-    #one To many
+    #one To one
     public function contents() {
-        return $this->hasMany(Content::class);
+        return $this->hasOne(Content::class);
     }
 
     public function parent() {

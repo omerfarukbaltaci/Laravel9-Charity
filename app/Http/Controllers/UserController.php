@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Models\Content;
 use App\Models\Menu;
+use App\Models\Payment;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,7 +32,6 @@ class UserController extends Controller
         return view('home.user.comments', [
             'setting'=>$setting,
             'comments'=>$comments,
-
         ]);
     }
 
@@ -44,22 +44,32 @@ class UserController extends Controller
 
     public function contents()
     {
-        $contents = Content::all();
+        $contents = Content::where('user_id','=',Auth::id())->get();
         $setting = Setting::first();
         return view('home.user.contents', [
             'setting'=>$setting,
-            'contents'=>$contents,
+            'contents'=>$contents
 
         ]);
     }
 
     public function menus()
     {
-        $menus = Menu::all();
+        $data = Menu::all();
         $setting = Setting::first();
         return view('home.user.menus', [
             'setting'=>$setting,
-            'menus'=>$menus,
+            'data'=>$data,
+        ]);
+    }
+
+    public function donations()
+    {
+        $data = Payment::where('user_id','=',Auth::id())->get();
+        $setting = Setting::first();
+        return view('home.user.donations', [
+            'setting'=>$setting,
+            'data'=>$data,
         ]);
     }
 

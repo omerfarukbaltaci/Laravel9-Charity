@@ -45,7 +45,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($menus as $rs)
+                            @foreach($data as $rs)
                                 <tr role="row" class="odd">
                                     <th>{{$rs->id}}</th>
                                     <th>{{\App\Http\Controllers\MenuController::getParentsTree($rs,$rs->title)}}</th>
